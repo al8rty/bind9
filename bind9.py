@@ -38,10 +38,10 @@ def download_config(url, output_path):
 def confirm_bind9():
     if not is_bind9_installed():
         print("bind9 is not installed. Installing now...")
-        install_bind9
+        install_bind9()
 
-    config_url = ""
-    config_path = "/etc/bind/zones"
+    config_url = "https://github.com/al8rty/bind9.git"
+    config_path = "/etc/bind/"
 
     download_config(config_url, config_url)
 
