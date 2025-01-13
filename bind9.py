@@ -17,10 +17,14 @@ def install_bind9():
         print("Updating package list...")
         subprocess.run(["sudo", "apt-get", "update"], check=True)
 
-        print("Instlalling bind9...")
+        print("Installing bind9...")
         subprocess.run(["sudo", "apt-get", "install", "-y", "bind9"], check=True)
 
         print("bind9 installed successfully.")
+
+    except subprocess.CalledProcessError as t:
+        print(f"An error occurred during the installation process: {t}")
+        exit(1)
 
 def download_config(url, output_path):
     try:
@@ -32,7 +36,7 @@ def download_config(url, output_path):
         print(f"Configuration file downloaded to {output_path}")
     
     except Exception as E:
-        print(f"Error donloading configuration file: {E}")
+        print(f"Error downloading configuration file: {E}")
         exit(1)
 
 def confirm_bind9():
@@ -41,9 +45,9 @@ def confirm_bind9():
         install_bind9()
 
     config_url = "https://github.com/al8rty/bind9.git"
-    config_path = "/etc/bind/"
+    config_path = "/etc/bind/named.conf.local"
 
-    download_config(config_url, config_url)
+    download_config(config_url, config_path)
 
     try:
         subprocess.run(["sudo", "systemctl", "restart", "bind9"], check=True)
@@ -53,7 +57,7 @@ def confirm_bind9():
 
 if __name__ == "__main__":
     if os.geteuid() !=0:
-        print("This script requires superuser privileges. Pleace run as root or use sudo.")
+        print("This script requires superuser privileges. Please run as root or use sudo.")
     else:
         confirm_bind9()
 
