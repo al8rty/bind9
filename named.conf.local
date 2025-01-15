@@ -1,0 +1,13 @@
+// Primary zone
+
+zone "work-group.ru" {
+    type master;
+    file "/etc/bind/zones/db.work-grop.ru";
+};
+
+// Secondary zone
+
+zone "2.0.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.192.0.2";
+};
