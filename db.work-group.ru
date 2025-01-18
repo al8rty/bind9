@@ -7,11 +7,6 @@ $TTL    604800
                  604800 )       ; Negative Cache TTL
 ;
         IN      NS      work-group.ru.
-        IN      A       192.168.100.2  ; IP-адрес вашего DNS-сервера
-hq-rtr  IN      A       192.168.100.1
-br-rtr  IN      A       192.168.200.1
-hq-srv  IN 	A	192.168.100.2
-hq-cli	IN	A	192.168.100.66
-br-srv	IN	A	192.168.200.2
-moodle	IN	hq-rtr.work-group.ru.
-wiki	IN	hq-rtr.work-group.ru.
+        IN      A       192.168.0.2  ; IP-адрес вашего DNS-сервер
+two     IN      A       192.168.1.2
+one     IN      A       192.168.0.2
