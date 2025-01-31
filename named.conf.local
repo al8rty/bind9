@@ -1,8 +1,8 @@
 // Primary zone
 
-zone "work-group.ru" {
+zone "au-team.irpo" {
     type master;
-    file "/etc/bind/zones/db.work-grop.ru";
+    file "/etc/bind/zones/db.au-team.irpo";
 };
 
 // Secondary zone
