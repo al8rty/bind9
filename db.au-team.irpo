@@ -5,13 +5,11 @@ $TTL    604800
                   86400         ; Retry
                 2419200         ; Expire
                  604800 )       ; Negative Cache TTL
-;
-        IN      NS      au-team.irpo.
-        IN      A       192.168.1.2  ; IP-адрес вашего DNS-сервер
-cli     IN      A       172.16.10.5
-hq-srv  IN      A       192.168.1.2
-hq-rtr  IN      A       192.168.1.1
-br-rtr  IN      A       192.168.2.1
+
+@       IN      NS      ns.au-team.irpo.
+ns      IN      A       192.168.1.2
 br-srv  IN      A       192.168.2.2
-moodle  IN      hq-rtr.au-team.irpo.
-wiki    IN      hq-rtr.au-team.irpo.
+hq-rtr  IN      A       172.16.4.2
+br-rtr  IN      A       172.16.5.2
+cli     IN      A       172.16.10.5
+isp     IN      A       10.0.137.72
