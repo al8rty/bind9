@@ -11,5 +11,4 @@ ns      IN      A       192.168.1.2
 br-srv  IN      A       192.168.2.2
 hq-rtr  IN      A       172.16.4.2
 br-rtr  IN      A       172.16.5.2
-cli     IN      A       192.168.3.5
-isp     IN      A       10.0.137.72
+cli     IN      A       172.16.10.5
