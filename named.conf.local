@@ -31,8 +31,3 @@ zone "2.168.192.in-addr.arpa" {
     type master;
     file "/etc/bind/zones/db.192.168.2";
 };
-
-zone "137.0.10.in-addr.arpa" {
-    type master;
-    file "/etc/bind/zones/db.10.0.137";
-};
